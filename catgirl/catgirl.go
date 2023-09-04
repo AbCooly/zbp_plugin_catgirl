@@ -63,7 +63,7 @@ func init() { // 插件主体
 		}
 	}
 
-	engine.OnRegex(`^[添加猫娘|成为猫娘]\s(.*[^\s$])\s([0-9]*)\s([0-9]*)\s([0-9]*)\s(.*)$`).SetBlock(true).
+	engine.OnRegex(`^[添|成][加|为]猫娘\s(.*[^\s$])\s([0-9]*)\s([0-9]*)\s([0-9]*)\s(.+)$`).SetBlock(true).
 		Handle(func(ctx *zero.Ctx) {
 			gid := ctx.Event.GroupID
 			if gid == 0 {
